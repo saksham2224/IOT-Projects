@@ -1,0 +1,20 @@
+int ldrSensor = 2;  // LDR module DO pin
+int led = 8;        // Street light LED
+
+void setup() {
+  pinMode(ldrSensor, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  int ldrValue = digitalRead(ldrSensor);
+
+  if (ldrValue == HIGH) {  
+    // Dark detected
+    digitalWrite(led, HIGH);
+  } 
+  else {
+    // Light detected
+    digitalWrite(led, LOW);
+  }
+}
